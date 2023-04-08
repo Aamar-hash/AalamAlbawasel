@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fields Dropdown</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<style
+		.dropdown-menu-custom {
+			width: 800px;
+		}
+		></style>
+		<style>
+			/* Custom CSS to align labels to the top right */
+			.form-group.text-right label {
+			  display: block;
+			  text-align: right;
+			}
+		  </style>
+</head>
+<body>
+
+	<a href="{{url_for('cashier_dashboard')}}" class="list-group-item list-group-item-action" style="background-color: #00a6f2; color: aliceblue; text-decoration: solid; font-weight: bold;">Dashboard</a>
+
+
+	<div class="col-md-6 col-lg-5 d-flex justify-content-center align-items-center px-0">
+		<div style="text-align:center;">
+		  <img src="{{ url_for('static', filename='logo.png') }}" alt="login form" class="img-fluid" style="max-width:20%; height:auto; display:inline-block; vertical-align:middle; margin-right:10px; margin-left:100px;" />
+		  <h3 style="display:inline-block; vertical-align:middle;">Welcome Cashier</h3>
+		</div>
+	  </div>
+	  	  
+	  
+	<div class="container">
+		<div class="row justify-content-center">
+		  <div class="col-md-12">
+			<form action="{{ url_for('calculation') }}" method="post">
+			  <div class="text-center" style="padding-top: 20px;">
+				<button type="button" style="background-color: #00a6f2; width: 1100px;" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+					طباعه اسود واتساب + طباعه الصور بدون تعديل A4 للملف واحد
+				</button>
+			  </div>
+			  <div class="text-center" style="padding-top: 10px;">
+				<div class="row" style="padding: 10px;">
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="input7">سعر الورقة بعد الضريبة</label>
+					  <input type="text" class="form-control" id="input7" name="input7" value="{{input7}}">
+					</div>
+				  </div>
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="input6">السعر قبل الضريبة</label>
+					  <input type="text" class="form-control" id="input6" name="input6" value="{{input6}}">
+					</div>
+				  </div>
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="input5">الإجمالي</label>
+					  <input type="text" class="form-control" id="input5" name="input5" value="{{input5}}">
+					</div>
+				  </div>
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="input4">الضريبة</label>
+					  <input type="text" class="form-control" id="input4" name="input4" value="{{input4}}">
+					</div>
+				  </div>
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="input2">السعر قبل الضريبة</label>
+					  <div class="input-group">
+						<input type="text" class="form-control" id="input2" name="input2" value="{{input3}}" style="margin-right: 5px;">
+						<input type="text" class="form-control" id="input3" name="input3" value="{{input2}}">
+					  </div>
+					</div>
+				  </div>
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="pages_number">عدد الورق</label>
+					  <input type="text" class="form-control" id="pages_number" name="pages_number" value="{{input_1}}" onkeydown="submitOnEnter(event)">
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</form>
+		  </div>
+		</div>
+	  </div>
+
+  
+
+
+	  <div class="container">
+		<div class="row justify-content-center">
+		  <div class="col-md-12">
+			<form action="{{ url_for('calculation2') }}" method="post">
+			  <div class="text-center" style="padding-top: 20px;">
+				<button type="button" style="background-color: #00a6f2; width: 1100px;" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+					طباعه ملون واتساب A4 + طباعه الصور بدون تعديل A4 للملف واحد 
+								</button>
+			  </div>
+			  <div class="text-center" style="padding-top: 10px;">
+				<div class="row" style="padding: 10px;">
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="input7_malon">سعر الورقة بعد الضريبة</label>
+					  <input type="text" class="form-control" id="input7_malon" name="input7_malon" value="{{input7_malon}}">
+					</div>
+				  </div>
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="input6_malon">السعر قبل الضريبة</label>
+					  <input type="text" class="form-control" id="input6_malon" name="input6_malon" value="{{input6_malon}}">
+					</div>
+				  </div>
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="input5_malon">الإجمالي</label>
+					  <input type="text" class="form-control" id="input5_malon" name="input5_malon" value="{{input5_malon}}">
+					</div>
+				  </div>
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="input4_malon">الضريبة</label>
+					  <input type="text" class="form-control" id="input4_malon" name="input4_malon" value="{{input4_malon}}">
+					</div>
+				  </div>
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="input2_malon">السعر قبل الضريبة</label>
+					  <div class="input-group">
+						<input type="text" class="form-control" id="input2_malon" name="input2_malon" value="{{input3_malon}}" style="margin-right: 5px;">
+						<input type="text" class="form-control" id="input3_malon" name="input3_malon" value="{{input2_malon}}">
+					  </div>
+					</div>
+				  </div>
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="pages_number_malon">كمية الورق</label>
+					  <input type="text" class="form-control" id="pages_number_malon" name="pages_number_malon" value="{{input_1_malon}}" onkeydown="submitOnEnterCalculationSecond(event)">
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</form>
+		  </div>
+		</div>
+	  </div>
+
+
+
+
+
+
+
+	  <div class="container">
+		<div class="row justify-content-center">
+		  <div class="col-md-12">
+			<form action="{{ url_for('calculation3') }}" method="post">
+			  <div class="text-center" style="padding-top: 20px;">
+				<button type="button" style="background-color: #00a6f2; width: 1100px;" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+					طباعه صور مع تعديل الحجم A4 اسود 
+								</button>
+			  </div>
+			  <div class="text-center" style="padding-top: 10px;">
+				<div class="row" style="padding: 10px;">
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="input7_alsur">سعر الورقة بعد الضريبة</label>
+					  <input type="text" class="form-control" id="input7_alsur" name="input7_alsur" value="{{input7_alsur}}">
+					</div>
+				  </div>
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="input6_alsur">السعر قبل الضريبة</label>
+					  <input type="text" class="form-control" id="input6_alsur" name="input6_alsur" value="{{input6_alsur}}">
+					</div>
+				  </div>
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="input5_alsur">الإجمالي</label>
+					  <input type="text" class="form-control" id="input5_alsur" name="input5_alsur" value="{{input5_alsur}}">
+					</div>
+				  </div>
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="input4_alsur">الضريبة</label>
+					  <input type="text" class="form-control" id="input4_alsur" name="input4_alsur" value="{{input4_alsur}}">
+					</div>
+				  </div>
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="input2_alsur">السعر قبل الضريبة</label>
+					  <div class="input-group">
+						<input type="text" class="form-control" id="input2_alsur" name="input2_alsur" value="{{input3_alsur}}" style="margin-right: 5px;">
+						<input type="text" class="form-control" id="input3_alsur" name="input3_alsur" value="{{input2_alsur}}">
+					  </div>
+					</div>
+				  </div>
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="pages_number_alsur">عدد الصور </label>
+					  <input type="text" class="form-control" id="pages_number_alsur" name="pages_number_alsur" value="{{input_1_alsur}}" onkeydown="submitOnEnterCalculationThird(event)">
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</form>
+		  </div>
+		</div>
+	  </div>
+
+
+
+
+
+
+
+
+	  <div class="container">
+		<div class="row justify-content-center">
+		  <div class="col-md-12">
+			<form action="{{ url_for('calculation4') }}" method="post">
+			  <div class="text-center" style="padding-top: 20px;">
+				<button type="button" style="background-color: #00a6f2; width: 1100px;" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+					طباعه اسود واتساب + طباعه الصور بدون تعديل A3 للملف واحد
+								</button>
+			  </div>
+			  <div class="text-center" style="padding-top: 10px;">
+				<div class="row" style="padding: 10px;">
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="input7_wahid">سعر الورقة بعد الضريبة</label>
+					  <input type="text" class="form-control" id="input7_wahid" name="input7_wahid" value="{{input7_wahid}}">
+					</div>
+				  </div>
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="input6_wahid">السعر قبل الضريبة</label>
+					  <input type="text" class="form-control" id="input6_wahid" name="input6_wahid" value="{{input6_wahid}}">
+					</div>
+				  </div>
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="input5_wahid">الإجمالي</label>
+					  <input type="text" class="form-control" id="input5_wahid" name="input5_wahid" value="{{input5_wahid}}">
+					</div>
+				  </div>
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="input4_wahid">الضريبة</label>
+					  <input type="text" class="form-control" id="input4_wahid" name="input4_wahid" value="{{input4_wahid}}">
+					</div>
+				  </div>
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="input2_wahid">السعر قبل الضريبة</label>
+					  <div class="input-group">
+						<input type="text" class="form-control" id="input2_wahid" name="input2_wahid" value="{{input3_wahid}}" style="margin-right: 5px;">
+						<input type="text" class="form-control" id="input3_wahid" name="input3_wahid" value="{{input2_wahid}}">
+					  </div>
+					</div>
+				  </div>
+				  <div class="col-md-2">
+					<div class="form-group text-right">
+					  <label for="pages_number_wahid">عدد الورق </label>
+					  <input type="text" class="form-control" id="pages_number_wahid" name="pages_number_wahid" value="{{input_1_wahid}}" onkeydown="submitOnEnterCalculationThird(event)">
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</form>
+		  </div>
+		</div>
+	  </div>
+
+
+
+
+
+
+
+				  
+		 <script>
+		function submitOnEnter(event) 
+		{
+  		if (event.keyCode === 13) 
+			{
+    	event.preventDefault();
+    	event.stopPropagation();
+    	var pagesNumberInput = $("#pages_number");
+    	var pagesNumberValue = pagesNumberInput.val();
+    	$('#form-submitted').val('true');
+    	event.target.form.submit();
+    	pagesNumberInput.val(pagesNumberValue);
+    	pagesNumberInput.focus();
+  			}
+		}
+
+
+		function submitOnEnterCalculationSecond(event) 
+		{
+  		if (event.keyCode === 13) 
+			{
+    	event.preventDefault();
+    	event.stopPropagation();
+    	var pagesNumberInput = $("#pages_number_malon");
+    	var pagesNumberValue = pagesNumberInput.val();
+    	$('#form-submitted').val('true');
+    	event.target.form.submit();
+    	pagesNumberInput.val(pagesNumberValue);
+    	pagesNumberInput.focus();
+  			}
+		}
+
+
+		function submitOnEnterCalculationThird(event) 
+		{
+  		if (event.keyCode === 13) 
+			{
+    	event.preventDefault();
+    	event.stopPropagation();
+    	var pagesNumberInput = $("#pages_number_alsur");
+    	var pagesNumberValue = pagesNumberInput.val();
+    	$('#form-submitted').val('true');
+    	event.target.form.submit();
+    	pagesNumberInput.val(pagesNumberValue);
+    	pagesNumberInput.focus();
+  			}
+		}
+
+		function submitOnEnterCalculationFourth(event) 
+		{
+  		if (event.keyCode === 13) 
+			{
+    	event.preventDefault();
+    	event.stopPropagation();
+    	var pagesNumberInput = $("#pages_number_wahid");
+    	var pagesNumberValue = pagesNumberInput.val();
+    	$('#form-submitted').val('true');
+    	event.target.form.submit();
+    	pagesNumberInput.val(pagesNumberValue);
+    	pagesNumberInput.focus();
+  			}
+		}
+
+
+
+
+
+
+
+		</script>
+							
+</body>
+</html>

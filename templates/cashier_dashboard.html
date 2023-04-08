@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Library Management System</title>
+	<!-- Link to Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-- Custom CSS -->
+  <style type="text/css">
+    /* Set height of main container to 100% of viewport height */
+    html, body {
+      height: 100%;
+    }
+    /* Set height of main content area to 100% of viewport height minus height of navigation bar */
+    .main-content {
+      height: calc(100vh - 56px); /* Change 56px to match the height of your navigation bar */
+      overflow-y: auto; /* Add scrollbars if content overflows */
+      padding: 20px;
+      margin-top: 50px;
+    }
+    /* Set active link to bold and change text color to white */
+    .sidebar .list-group-item {
+      color: white;
+      margin-bottom: 0; /* Remove margin bottom between items */
+    }
+    .sidebar a.active {
+      font-weight: bold;
+      color: #ffffff;
+    }
+    .list-group-item {
+      border: 1px solid #00a6f2; /* add a 1px solid stroke to the list item */
+      border-radius: 0px; /* remove any border radius */
+      color: #fff; /* set text color to white */
+      padding-bottom: 10%;
+      margin-bottom: 10px;
+    }
+    .list-group-item:hover {
+      background-color: #0073a8;
+      color: #fff;
+      border-color: white; /* Add white stroke on hover */
+    }
+    .navbar {
+      padding: 15px; /* add a 20px padding to the navigation bar */
+      color: #fff;
+    }
+    .navbar-brand {
+      color: #00a6f2;
+    }
+    .sidebar a:hover {
+      color: #fff;
+      background-color: #333333; /* change background color on hover */
+      text-decoration: none;
+    }
+    /* Set sidebar height to 100% of viewport height */
+    .sidebar {
+      height: 100vh;
+      width: 15vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #00a6f2;
+      padding-top: 56px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="list-group">
+          <a href="{{url_for('dashboard')}}" class="list-group-item list-group-item-action" style="background-color: #0087c5; text-decoration: solid; font-weight: bold;">Dashboard</a>
+          <a href="{{ url_for('calculation') }}" class="list-group-item list-group-item-action" style="background-color: #0087c5; text-decoration: solid; font-weight: bold;">Calculate Price</a>
+          <a href="{{url_for('logout')}}" class="list-group-item list-group-item-action" style="background-color: #0087c5; text-decoration: solid; font-weight: bold;">Logout</a>
+        </div>
+      </div>
+      
+	<!-- Navigation bar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+		<a class="navbar-brand" href="#">AALAM  ALABAWASEL</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	</nav>
+
+	<!-- Main content -->
+	<div class="container-fluid">
+		<div class="row">
+			<!-- Main content area -->
+			<div class="col-md-10 offset-md-2 main-content">
+				<h1>Welcome to the Cashier Dashboard</h1>
+				<p>Hello Cashier.</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Link to jQuery and Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@2.9.2/dist/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

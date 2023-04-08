@@ -1,0 +1,64 @@
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User Registeration Form</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">              
+</head>
+<body>
+	<a href="{{url_for('dashboard')}}" class="list-group-item list-group-item-action" style="background-color: #00a6f2; color: aliceblue; text-decoration: solid; font-weight: bold;">Dashboard</a>
+
+<div class="container">
+	<h2 style="padding-top: 10px;">Add Item</h2>
+	<form action="{{ url_for('add_item') }}" method="post">
+		{% if message is defined and message %}
+		<div class="alert alert-warning">{{ message }}</div>
+		<script>
+		  setTimeout(function() {
+			var messageElement = document.querySelector(".alert");
+			messageElement.parentNode.removeChild(messageElement);
+		  }, 5000); // 5 seconds
+		</script>
+	  {% endif %}
+
+	  <div class="card">
+		<div class="card-body py-4 px-md-4">
+			<h5 style="padding-top: 5px;">Please enter item information</h5>
+
+		<div class="form-group">
+			<label for="item_id">Item ID:</label>
+			<input type="text" class="form-control" id="item_id" name="item_id" placeholder="Enter Item ID">
+		</div>
+		<div class="form-group">
+			<label for="item_name">Item name:</label>
+			<input type="text" class="form-control" id="item_name" name="item_name" placeholder="Enter Item name">
+		</div>
+		<div class="form-group">
+			<label for="item_price">Price:</label>
+			<input type="text" class="form-control" id="item_price" name="item_price" placeholder="Enter Item price">
+		</div>    
+
+        <div class="form-group">
+			<label for="tax_without_price">Tax without Price:</label>
+			<input type="text" class="form-control" id="tax_without_price" name="tax_without_price" placeholder="Enter Tax without price">
+		</div>   
+
+		<div class="form-group">
+			<label for="total_price">Total Price:</label>
+			<input type="text" class="form-control" id="total_price" name="total_price" placeholder="Enter Total price">
+		</div>   
+
+
+		<button type="submit" class="btn btn-primary btn-lg mx-auto d-block" style="background-color: #00a6f2">Submit</button>
+
+		</div>
+	
+	</div>
+
+	</form>
+</div>  
+
+
+</body>
+</html>
